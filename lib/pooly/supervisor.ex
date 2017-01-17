@@ -12,7 +12,7 @@ defmodule Pooly.Supervisor do
   def init(pools_config) do
     children = [
       supervisor(Pooly.PoolsSupervisor, []),
-      worker(Pooly.Server, [self(), pool_config])
+      worker(Pooly.Server, [pools_config])
     ]
     opts = [strategy: :one_for_all]
     supervise(children, opts)

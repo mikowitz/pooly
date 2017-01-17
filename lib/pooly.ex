@@ -10,7 +10,7 @@ defmodule Pooly do
     start_pools(pools_config)
   end
 
-  def start_pool(pools_config) do
+  def start_pools(pools_config) do
     Pooly.Supervisor.start_link(pools_config)
   end
 
